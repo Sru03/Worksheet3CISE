@@ -1,11 +1,11 @@
 // app.js
 
 const express = require('express');
-const connectDB = require('./project/config/db');
+const connectDB = require('../project/config/db');
 const cors = require('cors');
 
 //routes
-const books = require('./routes/api/book')
+const books = require('../routes/api/books')
 
 
 const app = express();
@@ -22,7 +22,7 @@ app.use(express.json({ extended: false }));
 app.get('/', (req, res) => res.send('Hello world!'));
 
 //use Routes
-app.use('/api/book', books);
+app.use('/api/books', books);
 
 const port = process.env.PORT || 8082;
 
